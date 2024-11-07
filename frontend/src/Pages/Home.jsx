@@ -40,7 +40,7 @@ function Home() {
 
     const handleAddClick = () => {
         navigate('/register');
-      }
+    }
 
     // Handle submitting the edited employee data
     const handleSubmit = (e) => {
@@ -81,18 +81,27 @@ function Home() {
 
 
     return (
-        <div className="w-100 justify-content-center align-items-center">
-            <div className="w-90">
-                <table>
-                    <thead>
+        <div className="container-fluid">
+            <div>
+                <h1 className='text-center mb-7'>Employee Database</h1>
+                <div className="mt-5 mb-5">
+                    <div className="form">
+                        <input placeholder="Search..." type="text" className="form-control" />
+
+                    </div>
+                </div>
+            </div>
+            <div className="container text-center">
+                <table className="table">
+                    <thead className="thead-dark">
                         <tr>
-                            <th>
+                            <th className="col">
                                 Employee ID
                             </th>
-                            <th>
+                            <th className="col">
                                 First Name
                             </th>
-                            <th>
+                            <th scope="col">
                                 Last Name
                             </th>
                             <th>
@@ -101,7 +110,7 @@ function Home() {
                             <th>
                                 Department
                             </th>
-                            <th>
+                            <th scope="col">
                                 Actions
                             </th>
                         </tr>
@@ -109,7 +118,7 @@ function Home() {
                     <tbody>
                         {
                             employees.map(employee => {
-                                return <tr key={employee.empID}>
+                                return <tr key={employee.empID} >
                                     <td>{employee.empID}</td>
                                     <td>{employee.firstName}</td>
                                     <td>{employee.lastName}</td>
@@ -117,7 +126,7 @@ function Home() {
                                     <td>{employee.empDept}</td>
                                     <td>
                                         <button
-                                            className="btn btn-warning btn-sm"
+                                            className="btn btn-warning btn-sm "
                                             onClick={() => handleClick(employee)}
                                         >
                                             Edit
@@ -125,7 +134,7 @@ function Home() {
                                         </button>
 
                                         <button
-                                            className="btn btn-danger btn-sm"
+                                            className="btn btn-danger btn-sm ms-3 me-3"
                                             type="button"
                                             onClick={() => handleDelete(employee.empID)}
                                         >
@@ -134,7 +143,7 @@ function Home() {
                                         </button>
 
                                         <button
-                                            className="btn btn-primary btn-sm"
+                                            className="btn btn-primary btn-sm me-3"
                                             type="button"
                                             onClick={handleAddClick}
                                         >
