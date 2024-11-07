@@ -134,7 +134,7 @@ function Home() {
                                         </button>
 
                                         <button
-                                            className="btn  btn-sm"
+                                            className="btn btn-primary btn-sm"
                                             type="button"
                                             onClick={handleAddClick}
                                         >
